@@ -29,6 +29,7 @@ public class FakeStoreProductService implements ProductService{
     }
     @Override
     public GenericProductDto createProduct(GenericProductDto product) {
+        System.out.println("in getAllProducts Service 11");
         return convertFakeStoreProductIntoGenericProduct(fakeStoreProductServiceClient.createProduct(product));
     }
     @Override

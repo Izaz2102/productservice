@@ -1,8 +1,32 @@
 package dev.izaz.productservice.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Category extends BaseModel{
+    @Column
     private String name;
+    //@OneToMany(mappedBy = "category")
+    //private List<Product> products = new ArrayList<>();
+    //this is the same relation being mapped by category attribute in the other (Product) class
 }
+// class Group {
+//   m:m
+//   List<User> members;
+//   m:m
+//   List<User> admins;
+//
+//   1----> 1
+//   m<---- 1
+//   m   :  1
+//   User creator;
+// }

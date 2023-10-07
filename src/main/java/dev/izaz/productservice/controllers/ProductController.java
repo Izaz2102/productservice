@@ -70,7 +70,9 @@ public class ProductController {
 	}
 	
 	@PostMapping()
-	public GenericProductDto createProduct(@RequestBody GenericProductDto product) { return productService.createProduct(product); }
+	public GenericProductDto createProduct(@RequestBody GenericProductDto product) {
+		return productService.createProduct(product);
+	}
 	
 	@PutMapping("/{id}")
 	public GenericProductDto updateProductById(@RequestBody GenericProductDto genericProductDto, @PathVariable("id") Long id) {

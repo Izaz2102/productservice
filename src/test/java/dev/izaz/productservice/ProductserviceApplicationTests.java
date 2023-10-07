@@ -1,4 +1,4 @@
-package dev.izaz;
+package dev.izaz.productservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

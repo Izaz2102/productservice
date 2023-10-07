@@ -1,9 +1,11 @@
 package dev.izaz.productservice;
 
 import dev.izaz.productservice.inheritancedemo.singletable.Mentor;
-import dev.izaz.productservice.inheritancedemo.singletable.MentorRepository;
+//import dev.izaz.productservice.inheritancedemo.singletable.MentorRepository;
+import dev.izaz.productservice.inheritancedemo.joinedtable.MentorRepository;
 import dev.izaz.productservice.inheritancedemo.joinedtable.User;
-import dev.izaz.productservice.inheritancedemo.singletable.UserRepository;
+//import dev.izaz.productservice.inheritancedemo.singletable.UserRepository;
+import dev.izaz.productservice.inheritancedemo.joinedtable.UserRepository;
 import dev.izaz.productservice.models.Category;
 import dev.izaz.productservice.models.Product;
 import dev.izaz.productservice.repositories.CategoryRepository;
@@ -17,14 +19,15 @@ import java.util.List;
 
 @SpringBootApplication
 public class ProductserviceApplication implements CommandLineRunner {
+//public class ProductserviceApplication {
 
 	private MentorRepository mentorRepository;
 	private UserRepository userRepository;
 	private final ProductRepository productRepository;
 	private final CategoryRepository categoryRepository;
 
-	public ProductserviceApplication(@Qualifier("st_mr") MentorRepository mentorRepository,
-									 @Qualifier("st_ur") UserRepository userRepository,
+	public ProductserviceApplication(@Qualifier("jt_mr") MentorRepository mentorRepository,
+									 @Qualifier("jt_ur") UserRepository userRepository,
 									 ProductRepository productRepository,
 									 CategoryRepository categoryRepository) {
 		this.mentorRepository = mentorRepository;
@@ -56,13 +59,12 @@ public class ProductserviceApplication implements CommandLineRunner {
 		}*/
 		Category category = new Category();
 		category.setName("Apple devices");
-
-		categoryRepository.save(category);
+		Category savedCategory = categoryRepository.save(category);
 
 		Product product = new Product();
 		product.setTitle("i phone");
 		product.setDescription("TEST");
-		product.setCategory(category);
+		product.setCategory(savedCategory);
 
 		productRepository.save(product);
 	}

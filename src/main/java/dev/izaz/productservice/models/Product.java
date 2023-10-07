@@ -1,15 +1,21 @@
 package dev.izaz.productservice.models;
 
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
-import jakarta.persistence.Entity;
+
+import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product extends BaseModel {
+//public class Product extends BaseModel {
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID uuid;
+
     private String title;
     private String description;
     private String image;

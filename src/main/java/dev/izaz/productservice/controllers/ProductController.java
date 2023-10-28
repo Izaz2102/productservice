@@ -20,7 +20,7 @@ public class ProductController {
 	//@Autowired
 	//field injection
 	private ProductService productService;
-	
+
 	// constructor injection
 	//@Autowired
 	public ProductController(ProductService productService) {
@@ -40,6 +40,7 @@ public class ProductController {
 			new GenericProductDto(),
 			new GenericProductDto()
 		);*/
+		System.out.println("test to PR");
 		return productService.getAllProducts();
 	}
 	

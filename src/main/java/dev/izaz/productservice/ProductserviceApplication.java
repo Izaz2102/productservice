@@ -21,17 +21,17 @@ import java.util.List;
 public class ProductserviceApplication implements CommandLineRunner {
 //public class ProductserviceApplication {
 
-	private MentorRepository mentorRepository;
-	private UserRepository userRepository;
+	//private MentorRepository mentorRepository;
+	//private UserRepository userRepository;
 	private final ProductRepository productRepository;
 	private final CategoryRepository categoryRepository;
 
-	public ProductserviceApplication(@Qualifier("jt_mr") MentorRepository mentorRepository,
-									 @Qualifier("jt_ur") UserRepository userRepository,
+	public ProductserviceApplication(//@Qualifier("jt_mr") MentorRepository mentorRepository,
+									 //@Qualifier("jt_ur") UserRepository userRepository,
 									 ProductRepository productRepository,
 									 CategoryRepository categoryRepository) {
-		this.mentorRepository = mentorRepository;
-		this.userRepository = userRepository;
+		//this.mentorRepository = mentorRepository;
+		//this.userRepository = userRepository;
 		this.productRepository = productRepository;
 		this.categoryRepository = categoryRepository;
 	}

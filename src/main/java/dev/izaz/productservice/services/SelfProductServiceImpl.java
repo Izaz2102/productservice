@@ -8,7 +8,7 @@ import dev.izaz.productservice.dtos.GenericProductDto;
 
 import java.util.List;
 
-//@Primary
+@Primary
 @Service("selfProductServiceImpl")
 public class SelfProductServiceImpl implements ProductService{
     ProductRepository productRepository;

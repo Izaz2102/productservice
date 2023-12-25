@@ -15,7 +15,7 @@ import dev.izaz.productservice.dtos.GenericProductDto;
 
 import java.util.ArrayList;
 import java.util.List;
-@Primary
+//@Primary
 @Service("fakeStoreProductService")
 public class FakeStoreProductService implements ProductService{
 	private FakeStoreProductServiceClient fakeStoreProductServiceClient;
@@ -29,7 +29,7 @@ public class FakeStoreProductService implements ProductService{
     }
     @Override
     public GenericProductDto createProduct(GenericProductDto product) {
-        System.out.println("in getAllProducts Service 11");
+        System.out.println("in createProduct Service 11");
         return convertFakeStoreProductIntoGenericProduct(fakeStoreProductServiceClient.createProduct(product));
     }
     @Override
